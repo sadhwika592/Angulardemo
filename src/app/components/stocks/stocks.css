@@ -1,0 +1,25 @@
+h4 {
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap :wrap;
+    justify-content: center;
+}
+
+.card{
+    border-radius: 15px;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(#cbf8e1, #ffffff);
+}
+

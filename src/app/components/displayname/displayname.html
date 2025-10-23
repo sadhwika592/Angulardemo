@@ -1,0 +1,21 @@
+][[[[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]]]
+<div class="container mt-3">
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Salutation</th>
+        <th>Name</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for(emp of employees; track $index){
+            <tr>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.name | salutation : emp.name}}</td>
+                <td>{{emp.salary}}</td>
+            </tr>
+        }
+    </tbody>
+  </table>
+</div>

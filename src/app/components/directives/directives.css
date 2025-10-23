@@ -1,0 +1,20 @@
+.inactive {
+  background-color: rgb(235, 149, 12) !important;
+  color: #ffffff !important;
+  font-style: italic;
+}
+
+.manager-role{
+    background-color: rgb(233, 242, 105) !important;
+    font-weight: bold;
+}
+
+.developer-role{
+    background-color: rgb(79, 176, 245) !important;
+    font-weight: bold;
+}
+
+.tester-role{
+    background-color: rgb(249, 110, 207) !important;
+    font-weight: bold;
+}

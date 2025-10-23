@@ -1,0 +1,51 @@
+<!-- <p>user-crud works!</p> -->
+
+<h3 class="text-center mb-5">Employee CRUD</h3>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            @if(!isLoading) {
+                <table class="table table-bordered table-striped">
+                <tbody>
+                    @for(emp of employees; track $index) {
+                        <tr>
+                            <td>{{emp.id}}</td>
+                            <td>{{emp.firstName}}</td>
+                            <td>{{emp.lastName}}</td>
+                            <td>{{emp.email}}</td>
+                            <td>{{emp.gender}}</td>
+                            <td>{{emp.salary}}</td>
+                            <td><button class="btn btn-danger" (click)="deleteEmp(emp.id)">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            }@else{
+                <h1>Loading...</h1>
+            }
+            
+        </div>
+        <div class="col-sm-4 border-3 p-2">
+            <p>
+                id: <input [(ngModel)]='empObj.id' />
+            </p>
+            <p>
+                firstName: <input [(ngModel)]='empObj.firstName' />
+            </p>
+            <p>
+                lastName: <input [(ngModel)]='empObj.lastName' />
+            </p>
+            <p>
+                email: <input [(ngModel)]='empObj.email' />
+            </p>
+            <p>
+                gender: <input [(ngModel)]='empObj.gender' />
+            </p>
+            <p>
+                salary: <input [(ngModel)]='empObj.salary' />
+            </p>
+           <button class="btn btn-primary" (click)="addNewEmp()">Add Employee</button>
+        </div>
+    </div>
+</div>

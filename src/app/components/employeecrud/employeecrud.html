@@ -1,0 +1,95 @@
+<!-- ASSIGNMENT
+1. create 1 EmployeeCRUD component
+2. display list of employees in a table(data comes from an array)
+3. user should be able to delete Employee (ask user confirmation) 
+4. view the details of selected employee in a modal (bootstrap Modal)
+5. add a new employee to the table (insert a new record to the array)
+   use SnackBar to display message ('EmployAdded Successfully' - message should be maintained in a constant file)
+6. use font-awesome to display any icons (star , delete, edit) -->
+
+
+
+
+
+
+
+
+
+
+
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Employee Table</h3>
+
+  <!-- view and delete an employee -->
+  <table class="table table-bordered table-striped text-center align-middle">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(emp of employees; track emp.id){
+      <tr>
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.role }}</td>
+        <td>{{ emp.salary }}</td>
+        <td>
+          <button type="button" class="btn btn-info btn-sm me-2" (click)="viewEmployee(emp)">
+            <i class="fa fa-eye"></i>View
+          </button>
+          <button type="button" class="btn btn-danger btn-sm" (click)="deleteEmployee(emp.id)">
+            <i class="fa fa-trash"></i>Delete
+          </button>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+<!-- adding an employee -->
+   <div class="card p-3 mb-5">
+    <h5>Add New Employee</h5>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Name"
+               [(ngModel)]="newEmployee.name" name="name">
+      </div>
+      <div class="col-md-4">
+        <input type="text" class="form-control" placeholder="Role"
+               [(ngModel)]="newEmployee.role" name="role">
+      </div>
+      <div class="col-md-4">
+        <input type="number" class="form-control" placeholder="Salary"
+               [(ngModel)]="newEmployee.salary" name="salary">
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary mt-2" (click)="addEmployee()">
+             <i class="fa fa-plus"></i>Add Employee</button>
+      </div>
+    </div>
+  </div>
+
+<!-- Bootstrap modal -->
+<div class="modal fade" id="employeeModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Employee Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        @if(selectedEmployee) {
+        <p><strong>ID:</strong> {{ selectedEmployee.id }}</p>
+        <p><strong>Name:</strong> {{ selectedEmployee.name }}</p>
+        <p><strong>Role:</strong> {{ selectedEmployee.role }}</p>
+        <p><strong>Salary:</strong> {{ selectedEmployee.salary }}</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

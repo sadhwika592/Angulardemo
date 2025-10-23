@@ -1,0 +1,58 @@
+<!-- Assignment
+==========
+1. Create a custom pipe(ordinal) which takes a number as input and returns in ordinal format
+   input : 21,22,23,24  output : 21st, 22nd , 23rd, 24th
+2. create a custom pipe(Roman) which takes a number as input and returns its equivalent roman value
+   input :  4    8     9   
+   output : IV  VIII   IX 
+3. create a custom pipe called 'age' which takes a date as input and returns the age in years.
+   input : 04-06-2020
+   output : 5 years old
+4. declare an array of employee objects. display them in a table.
+   create a custom pipe 'Salutation' that will add 'mr. / miss.' before the employee name.
+5. declare an array of employee objects. display them in a table. 
+   add a search-box above the table. create a custom-pipe to filter/search employees data. -->
+
+<h4>Ordinal pipe</h4>
+<ul>
+  @for (num of numbers; track num) {
+  <li>{{ num | ordinal }}</li>
+  }
+</ul>
+
+<h4>Roman Pipe</h4>
+<ul>
+  @for (num of numbers; track num) {
+  <li>{{ num | roman }}</li>
+  }
+</ul>
+
+<h4>Age Pipe</h4>
+<p>{{ birthdate | age }}</p>
+
+<h4>Employees with Salutation</h4>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+  </tr>
+  @for(emp of employees; track emp.name) {
+  <tr>
+    <td>{{ emp.name | salutation : emp.gender }}</td>
+    <td>{{ emp.dept }}</td>
+  </tr>
+  }
+</table>
+
+<!-- <h4>Search Employees</h4>
+<input type="text" [(ngModel)]="searchText" placeholder="Search by name" />
+<table border="1" cellpadding="5">
+  <tr>
+    <th>Name</th>
+    <th>Department</th>
+  </tr>
+  @for (emp of filteredEmployees; track emp.name){
+    <td>{{ emp.name }}</td>
+    <td>{{ emp.dept }}</td>
+}
+</table> -->

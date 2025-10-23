@@ -1,0 +1,29 @@
+<h4 class="text-center mb-4">Stock Data in Card Format</h4>
+<!-- @if(isLoading){
+    <p class="text-center text-muted mt-3">Loading stock data..</p>
+} -->
+<div class="row m-3">
+    @for(stock of allStocks | paginate: {itemsPerPage: 8, currentPage: p}; track $index){
+        <div class="col-md-3 mb-3">
+            <div class="card p-2 shadow-sm">
+                <h5>tickerSymbol: {{stock.tickerSymbol}}</h5>
+                <h5>sectorId: {{stock.sectorId}}</h5>
+                <h5>subSectorID: {{stock.subSectorID}}</h5>
+                <h5>marketCap: {{stock.marketCap}}</h5>
+                <h5>currentRatio: {{stock.currentRatio}}</h5>
+                <h5>cumulativeReturn: {{stock.cumulativeReturn}}</h5>
+            </div>
+        </div>
+    }
+</div>
+
+
+<div class="d-flex justify-content-center mt-3">
+    <pagination-controls
+        (pageChange)="p=  $event"
+        previousLabel = "Prev"
+        nextLabel="Next"
+        [maxSize]="5"
+        class="text-center">
+    </pagination-controls>
+</div>

@@ -1,0 +1,39 @@
+<!-- 1. create an EmployeeService
+	Service should have 1 variable.  ex: employees = [ {}, {}, {} {}]   
+	Service should have 3 methods.   ex: getAllEmployees(), getMaleEmployees(), getFemaleEmployees()
+2. inject that service in EmployeeComponent
+3. Display List of Employees in a table / Card
+   have a dropdown with 3 values- allEmployees , maleEmployees , femaleEmployees
+   based on the dropdown value selected, employee data should be shown -->
+
+
+
+<h4 class="text-center mb-4">Employee Table </h4>
+
+<select [(ngModel)]="selected" (change)="onDropChange()" class="form-select w-25 mb-4 mx-4">
+    <option value="allEmployees">All Employees</option>
+    <option value="maleEmployees">Male Employees</option>
+    <option value="femaleEmployees">Female Employees</option>
+</select>
+
+
+<table class="table table-bordered table-striped mx-4">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(emp of empList; track $index){
+            <tr>
+                <td>{{emp.id}}</td> 
+                <td>{{emp.name}}</td>
+                <td>{{emp.gender}}</td>
+                <td>{{emp.dept}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
