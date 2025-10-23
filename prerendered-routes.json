@@ -1,0 +1,10 @@
+{
+  "routes": {
+    "/Angulardemo/aboutus": {},
+    "/Angulardemo/careers": {},
+    "/Angulardemo/contactus": {},
+    "/Angulardemo/home": {},
+    "/Angulardemo/products": {},
+    "/Angulardemo/users": {}
+  }
+}
