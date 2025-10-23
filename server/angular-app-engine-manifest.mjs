@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/angular1',
+  basePath: 'https://sadhwika592.github.io/Angulardemo',
   supportedLocales: {
   "en-US": ""
 },
